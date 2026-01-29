@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations & Services Digital | Expert Marketing</title>
+    <meta name="description" content="Formations et services en marketing digital pour développer votre business en ligne">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #25D366;
+            --primary-dark: #1da851;
+            --dark: #1a1a1a;
+            --gray: #2d2d2d;
+            --light-gray: #f5f5f5;
+            --text: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-header {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
+            color: var(--white);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: var(--light-gray);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .trust-item p {
+            color: var(--text-light);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1.5rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            background: var(--white);
+            color: var(--primary);
+            padding: 1.125rem 3rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .btn-cta:hover {
+            background: var(--light-gray);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+
+            .hero p {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .services-grid,
+            .trust-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .btn-header {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.875rem;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">A7 DIGIT CENTER</div>
+            <a href="#" class="btn btn-header" onclick="openWhatsApp(event)">Discuter sur WhatsApp</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Développez Votre Business Digital et Multipliez Vos Résultats</h1>
+            <p>Pendant que d’autres avancent, tu hésites ? À toi de choisir : rester spectateur ou te former. A7 DIGIT CENTER te propose des formations 100 % en ligne pour démarrer et développer ton business digital : IA, cybersécurité, développement web, informatique, bureautique – adaptées au marché africain et international.</p>
+            <a href="#" class="btn" onclick="openWhatsApp(event)">Discuter Maintenant sur WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section>
+        <div class="section-container">
+            <h2 class="section-title">Ce Que Je Propose</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📚 Formations Digital</h3>
+                    <p>Des formations complètes pour maîtriser  IA, cybersécurité, développement web, informatique, bureautique, le dropshipping, l'affiliation, le marketing digital et créer votre business en ligne rentable. Méthodes éprouvées et stratégies actualisées.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>💰 Business et revenus en ligne</h3>
+                    <p>Stratégies concrètes pour monétiser vos compétences et créer des sources de revenus</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>🚀 Compétences d'avenir</h3>
+                    <p>IA, cybersécurité, développement web, le dropshipping, informatique, l'affiliation, le marketing digital - les domaines qui recrutent aujourd'hui</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="section-container">
+            <h2 class="section-title">Pourquoi Me Faire Confiance</h2>
+            
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🎓</div>
+                    <h3>Méthode pratique et Résultats Concrets</h3>
+                    <p>Du concret, pas de théorie inutile. Vous appliquez immédiatement</p>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">📈</div>
+                    <h3>Accès immédiat</h3>
+                    <p>Commencez dès maintenant, sans attendre</p>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">🤝</div>
+                    <h3>Adapté au marché africain</h3>
+                    <p>Formations pensées pour votre réalité et vos opportunités</p>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">📞</div>
+                    <h3>Support disponible</h3>
+                    <p>Des questions ? Je suis là pour vous accompagner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+        <div class="section-container">
+            <h2 class="section-title">Ce Que Disent Mes Client(es)</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Grâce aux formations, j'ai enfin pu lancer mon e-commerce et générer mes premiers 5000€ de CA en seulement 2 mois. L'accompagnement est vraiment de qualité."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Marie L.</h4>
+                            <p>Entrepreneure E-commerce</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Les stratégies marketing enseignées m'ont permis de multiplier par 3 mes revenus en affiliation. Tout est expliqué clairement, étape par étape."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">K</div>
+                        <div class="author-info">
+                            <h4>Karim B.</h4>
+                            <p>Affilié Marketing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Le coaching personnalisé fait toute la différence. J'ai évité beaucoup d'erreurs et gagné un temps précieux pour développer mon business."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sophie D.</h4>
+                            <p>Consultante Digital</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Prêt à Transformer Votre Vie Professionnelle ?</h2>
+            <p>Contactez-moi sur WhatsApp pour discuter de vos objectifs et découvrir comment je peux vous aider</p>
+            <a href="#" class="btn btn-cta" onclick="openWhatsApp(event)">Démarrer la Conversation</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="section-container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Est-ce adapté pour les débutants ?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolument ! Mes formations sont conçues pour accompagner les débutants de A à Z. Vous apprendrez progressivement toutes les compétences nécessaires avec des explications claires et des exemples concrets.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quel est le délai pour voir des résultats ?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Les premiers résultats peuvent apparaître dès les premières semaines, mais tout dépend de votre implication et de votre régularité. En moyenne, mes élèves commencent à générer leurs premiers revenus entre 1 et 3 mois.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quel budget faut-il prévoir pour démarrer ?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Le budget dépend du modèle que vous choisissez. Certaines méthodes peuvent démarrer avec moins de 100€, d'autres nécessitent un investissement plus conséquent. Je vous guide pour optimiser vos dépenses et maximiser votre retour sur investissement.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Comment se passe l'accompagnement ?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            L'accompagnement se fait principalement via WhatsApp pour un suivi réactif, avec des sessions individuelles selon la formule choisie. Vous avez accès aux formations en ligne 24/7 et pouvez me poser vos questions à tout moment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Commencez Dès Maintenant</h2>
+            <p>Envoyez-moi un message sur WhatsApp et recevez toutes les informations dont vous avez besoin</p>
+            <a href="#" class="btn btn-cta" onclick="openWhatsApp(event)">Contactez-moi sur WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" class="whatsapp-float" onclick="openWhatsApp(event)" aria-label="Contacter sur WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.404 5.194 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.846-4.508-1.846-6.924 0-7.435 6.049-13.489 13.489-13.489s13.489 6.049 13.489 13.489c0 7.44-6.054 13.49-13.489 13.49zM21.305 18.421c-0.411-0.205-2.421-1.196-2.796-1.332s-0.647-0.205-0.919 0.205c-0.272 0.411-1.053 1.332-1.291 1.604s-0.476 0.308-0.887 0.103c-0.411-0.205-1.738-0.641-3.308-2.041-1.222-1.091-2.048-2.435-2.286-2.846s-0.025-0.632 0.18-0.837c0.185-0.185 0.411-0.476 0.616-0.719s0.272-0.411 0.411-0.684c0.137-0.272 0.068-0.513-0.034-0.719s-0.919-2.215-1.258-3.033c-0.331-0.799-0.666-0.689-0.919-0.702-0.237-0.013-0.513-0.017-0.785-0.017s-0.719 0.103-1.094 0.513c-0.376 0.411-1.435 1.401-1.435 3.415s1.47 3.959 1.675 4.231c0.205 0.272 2.825 4.416 6.879 6.106 0.964 0.411 1.716 0.66 2.304 0.846 0.968 0.308 1.85 0.263 2.547 0.161 0.776-0.117 2.421-0.991 2.763-1.947s0.342-1.774 0.239-1.947c-0.103-0.171-0.376-0.273-0.787-0.478z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Configuration WhatsApp
+        const WHATSAPP_NUMBER = '22657502340'; // Remplacer par votre numéro au format international (sans + ni espaces)
+        const WHATSAPP_MESSAGE = 'Bonjour, je viens de votre page et je souhaite avoir plus d\'informations.';
+
+        // Fonction pour ouvrir WhatsApp
+        function openWhatsApp(event) {
+            event.preventDefault();
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+            window.open(url, '_blank');
+        }
+
+        // Fonction pour toggle FAQ
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Fermer tous les autres items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle l'item actuel
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Animation au scroll (optionnel)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Appliquer l'animation aux cartes
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.service-card, .testimonial-card, .trust-item');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
